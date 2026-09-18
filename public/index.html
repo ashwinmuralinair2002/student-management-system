@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Management System</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main>
+      <section id="landing-section">
+        <div class="landing-card">
+          <span class="eyebrow">Academic administration</span>
+          <h1>Student Management System</h1>
+          <p class="landing-description">
+            Manage students, courses, and enrollments from one organized place.
+          </p>
+          <div class="navigation-buttons">
+            <button type="button" data-section="student-section">Student Management</button>
+            <button type="button" data-section="course-section">Course Management</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="student-section" hidden>
+        <button class="back-button" type="button" data-section="landing-section">Back to Home</button>
+        <h1>Student Management</h1>
+        <h2 id="form-title">Add Student</h2>
+        <form id="student-form">
+          <div class="form-field">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" required />
+          </div>
+          <div class="form-field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required />
+          </div>
+          <div class="form-field">
+            <label for="phone-number">Phone Number</label>
+            <input id="phone-number" name="phoneNumber" type="tel" required />
+          </div>
+          <div class="form-actions">
+            <button id="submit-button" type="submit">Add Student</button>
+            <button id="cancel-button" type="button" hidden>Cancel Edit</button>
+          </div>
+        </form>
+        <h2>Students</h2>
+        <div class="table-wrapper">
+          <table>
+            <thead><tr><th>S.No.</th><th>Roll Number</th><th>Name</th><th>Email</th><th>Phone Number</th><th>Actions</th></tr></thead>
+            <tbody id="student-list"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="course-section" hidden>
+        <button class="back-button" type="button" data-section="landing-section">Back to Home</button>
+        <h1>Course Management</h1>
+        <h2 id="course-form-title">Add Course</h2>
+        <form id="course-form">
+          <div class="form-field">
+            <label for="course-code">Course Code</label>
+            <input id="course-code" name="code" type="text" required />
+          </div>
+          <div class="form-field">
+            <label for="course-name">Course Name</label>
+            <input id="course-name" name="title" type="text" required />
+          </div>
+          <div class="form-field">
+            <label for="maximum-students">Maximum Students</label>
+            <input id="maximum-students" name="maximumStudents" type="number" min="1" step="1" required />
+          </div>
+          <div class="form-actions">
+            <button id="course-submit-button" type="submit">Add Course</button>
+            <button id="course-cancel-button" type="button" hidden>Cancel Edit</button>
+          </div>
+        </form>
+        <h2>Courses</h2>
+        <div class="table-wrapper">
+          <table>
+            <thead><tr><th>S.No.</th><th>Course Code</th><th>Course Name</th><th>Current Students</th><th>Maximum Students</th><th>Actions</th></tr></thead>
+            <tbody id="course-list"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+    <script src="/vendor/sweetalert2/sweetalert2.all.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
